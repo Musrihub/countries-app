@@ -36,6 +36,7 @@ dropDown.addEventListener("click", () => {
 
 });
 const regionName = document.getElementsByClassName("regionName");
+const countryName = document.getElementsByClassName("countryName");
 region.forEach((element) => {
   element.addEventListener("click", () => {
     console.log(element);
@@ -53,3 +54,12 @@ region.forEach((element) => {
   });
 });
 
+search.addEventListener("input", () => {
+  Array.from(countryName).forEach((elem) => {
+    if (elem.innerText.toLowerCase().includes(search.value.toLowerCase())) {
+      elem.parentElement.parentElement.style.display = "grid";
+    } else {
+      elem.parentElement.parentElement.style.display = "none";
+    }
+  });
+});

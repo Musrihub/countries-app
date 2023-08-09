@@ -6,7 +6,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: white;
+  background-color:#6b5b5b;
   font: black;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -17,6 +17,10 @@ body {
   justify-content: space-between;
 }
 
+.container h1{
+  color: white;
+ 
+}
 .container.nth-child {
   box-shadow: 0 0 5px black;
 }
@@ -25,16 +29,25 @@ body {
   box-shadow: 0 0 5px black;
   border-radius: 5px;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 .form input {
-  width: 100px;
+  width: 400px;
   padding: 17px 14px;
   outline: 0;
   border: 0;
   font-size: 16px;
   letter-spacing: 0.5px;
 }
-button img {
+.filter{
+  color: white;
+}
+.search-icon{
+  border: none;
+  padding: 20px;
+}
+button img{
   width: 15px;
   border: none;
   cursor: pointer;
@@ -54,6 +67,11 @@ button img {
 .drop {
   position: absolute;
   cursor: pointer;
+}
+.region{
+  padding: 4px;
+  color: white;
+ 
 }
 .countries {
   padding: 30px;
@@ -76,6 +94,9 @@ button img {
 }
 .country-info{
   padding: 20px 18px;
+  color: white;
+  display: grid;
+  gap: 8px;
  
 }
 .country-info h5{
