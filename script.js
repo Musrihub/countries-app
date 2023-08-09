@@ -4,6 +4,7 @@ const countriesElem = document.querySelector(".countries");
 const dropDown = document.querySelector(".dropdown");
 const dropElem = document.querySelector(".drop");
 const region = document.querySelectorAll(".region");
+const search = document.querySelector(".search");
 
 async function getCountries() {
   const response = await fetch(countryUrl);
@@ -22,33 +23,33 @@ function showCountry(data) {
     
 </div>
 <div class="country-info">
-    <h5>${data.name.common}</h5>
+    <h5 class="countryName">${data.name.common}</h5>
     <p><strong>Population</strong>: ${data.population}</p>
     <p class="regionName"><strong>Region</strong>: ${data.region}</p>
     <p><strong>Capital</strong>: ${data.capital}</p>
 </div>`;
   countriesElem.appendChild(country);
- 
 }
 
- dropDown.addEventListener("click", ()=>{
-     dropElem.classList.toggle("showDropDown")
-   console.log("hello")
-   
-})
-const regionName = document.querySelector(".regionName")
- region.forEach(element =>{
-    element.addEventListener("click", ()=>{
-       console.log(element);
-        Array.from(regionName).forEach(elem => {
-                       if(elem.innerText.includes(element.innerText) || element.innerText =="All"){
-             elem.parentElement.parentElement.style.display ="grid";
+dropDown.addEventListener("click", () => {
+  dropElem.classList.toggle("showDropDown");
 
-           }           else{
-               elem.parentElement.parentElement.style.display= "none";
-           }      
-          })
-    })
-})
-
+});
+const regionName = document.getElementsByClassName("regionName");
+region.forEach((element) => {
+  element.addEventListener("click", () => {
+    console.log(element);
+    Array.from(regionName).forEach((elem) => {
+        console.log(elem.innerText)
+      if (
+        elem.innerText.includes(element.innerText) ||
+        element.innerText == "All"
+      ) {
+        elem.parentElement.parentElement.style.display = "grid";
+      } else {
+        elem.parentElement.parentElement.style.display = "none";
+      }
+    });
+  });
+});
 
